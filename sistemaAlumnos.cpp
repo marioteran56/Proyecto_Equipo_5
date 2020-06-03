@@ -4,7 +4,7 @@
  * Este es un sistema de calificaciones destinado para escuelas publicas y privadas que contraten
  * el servicio. El sistema es capaz de almacenar alumnos con los sig datos: Matricula, nombres, apellidos
  * promedio y calificaciones, ademas se pueden almacenar materias con los si datos: nombre y clave de materia.
- * @author: Equipo zorritas del bosque
+ * @author: Equipo 5
  * @version: 03/06/2020/1
  */
 
