@@ -8,15 +8,6 @@
 
 using namespace std;
 
-/**
- * Este es un sistema de calificaciones destinado para escuelas publicas y privadas que contraten
- * el servicio. El sistema es capaz de almacenar alumnos con los sig datos: Matricula, nombres, apellidos
- * promedio y calificaciones, ademas se pueden almacenar materias con los si datos: nombre y clave de materia.
- * @author: Equipo zorritas del bosque
- * @version: 28/05/2020/1
- * @see inserte referencias aqui
- */
-
  /**
   *En esta estructura se definen todo lo que tenga que ver con el alumno
   */
@@ -597,22 +588,25 @@ typeStruct* liberarMemoria(typeStruct* ptr, int& n) {
  */
 template <class typeStruct>
 void capturarRegistros(typeStruct* ptrDummy, int n, typeStruct* ptr = NULL, int nAnt = NULL) {
-	for (int i = 0; i < n; i++) {
-		cout << "\tRegistro " << i + 1 << endl;
-		cin >> ptrDummy[i];
-		if (ptr && validarID(ptrDummy[i].ID, ptr, nAnt)) { //Se valida si existen datos previos y si el ID ingresado ya existe
+	if (n > 0) {
+
+		cout << "\tRegistro " << n << endl;
+		cin >> ptrDummy[n-1];
+		if (ptr && validarID(ptrDummy[n-1].ID, ptr, nAnt)) { //Se valida si existen datos previos y si el ID ingresado ya existe
 			cout << "\tEste id ya existe por favor vuelve a ingresar los datos" << endl;
-			i--;//En caso de que ya exista volvera a pedir el registro
+			n++;//En caso de que ya exista volvera a pedir el registro
 		}
 		else {
-			if (validarID(ptrDummy[i].ID, ptrDummy, i)) { // Se valida para los primeros registros
+			if (validarID(ptrDummy[n-1].ID, ptrDummy, n-1)) { // Se valida para los primeros registros
 				cout << "\tEste id ya existe por favor vuelve a ingresar los datos" << endl;
-				i--;//En caso de que ya exista volvera a pedir el registro
+				n++;//En caso de que ya exista volvera a pedir el registro
 			}
 		}
-
-
+		n--;
+		capturarRegistros(ptrDummy,n,ptr,nAnt);
 	}
+	else
+		return;
 }
 
 /**
