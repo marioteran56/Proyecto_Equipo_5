@@ -1,4 +1,14 @@
 #include "functions.h"
+
+/**
+ * Este es un sistema de calificaciones destinado para escuelas publicas y privadas que contraten
+ * el servicio. El sistema es capaz de almacenar alumnos con los sig datos: Matricula, nombres, apellidos
+ * promedio y calificaciones, ademas se pueden almacenar materias con los si datos: nombre y clave de materia.
+ * @author: Equipo zorritas del bosque
+ * @version: 03/06/2020/1
+ */
+
+
 /*
  * Metodo principal (Main) donde se encuntra el menu de opciones principal
  */
